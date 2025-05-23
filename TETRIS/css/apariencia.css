@@ -1,0 +1,299 @@
+/* Reset and base styles */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Main game layout */
+#juego {
+  display: grid;
+  width: 100%;
+  flex: 1;
+  grid-template-areas:
+    "informacion canvas botonesjuego"
+    "controles controles controles";
+  grid-template-columns: minmax(120px, 10%) minmax(300px, 1fr) minmax(120px, 10%);
+  grid-template-rows: 1fr min-content;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 0;
+}
+
+/* Information panel - perfectly centered */
+#informacion {
+  grid-area: informacion;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  overflow: auto;
+  min-width: 120px;
+}
+
+#informacion span {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+#informacion div {
+  width: 100%;
+  padding: 0.5rem;
+  background: #e8e8e8;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+#historial {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+#nombreJugador {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: black;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+#nombreJugador::placeholder {
+  color: black;
+}
+
+#nombreJugador:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+#mejorPuntaje {
+  color: black;
+  font-family: 'Arial', sans-serif;
+}
+
+#mejorPuntaje h3 {
+  color: #4a90e2;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+#mejorPuntaje p {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-left: 3px solid #4a90e2;
+}
+
+#mejorPuntaje small {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+
+/* Game canvas */
+#canvas {
+  grid-area: canvas;
+  background: #000;
+  border: 2px solid #333;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  max-height: calc(100vh - 180px);
+  aspect-ratio: 4/3;
+  margin: 0 auto;
+}
+
+/* Game buttons panel - perfectly centered */
+#botonesjuego {
+  grid-area: botonesjuego;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-width: 120px;
+  overflow: auto;
+}
+
+#botonesjuego button {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 150px;
+  cursor: pointer;
+  border: none;
+  background: #ddd;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#botonesjuego button:hover {
+  background: #ccc;
+  transform: translateY(-2px);
+}
+
+/* Bottom controls */
+#controles {
+  grid-area: controles;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+  padding-top: 0.5rem;
+}
+
+#controles button {
+  font-size: 1.25rem;
+  height: 50px;
+  min-width: 80px;
+  background: #ddd;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#controles button:hover {
+  background: #ccc;
+  transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  min-height: 60px;
+  background: #222;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+}
+
+footer p {
+  color: #aaa;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer a {
+  color: #4af;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #6cf;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  #juego {
+    grid-template-areas:
+      "informacion"
+      "canvas"
+      "botonesjuego"
+      "controles";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto min-content;
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+  
+  #canvas {
+    height: 60vh;
+    min-height: 300px;
+    max-height: none;
+    aspect-ratio: 3/4;
+  }
+  
+  #informacion, #botonesjuego {
+    min-width: 100%;
+    padding: 1.5rem 1rem;
+  }
+  
+  #botonesjuego {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  #botonesjuego button {
+    max-width: 45%;
+    margin: 0.25rem;
+  }
+  
+  #controles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  #botonesjuego button, #controles button {
+    font-size: 1rem;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  #canvas {
+    height: 50vh;
+  }
+  
+  #botonesjuego {
+    flex-direction: column;
+  }
+  
+  #botonesjuego button {
+    max-width: 100%;
+  }
+  
+  #controles button {
+    font-size: 1.1rem;
+    height: 40px;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Yeison PV" />
+    <link rel="stylesheet" href="css/apariencia.css" />
+    <script src="js/control.js" defer></script>
+    <link rel="icon" href="imagenes/logo.png" type="image/png" />
+    <title>TETRIS</title>
+  </head>
+  <body>
+    <div id="juego">
+      <canvas id="canvas"></canvas>
+      <aside id="informacion">
+        <span>PUNTAJE:</span>
+        <div id="puntaje">0</div>
+        <span>NIVEL:</span>
+        <div id="nivel">1</div>
+        <span>TIEMPO:</span>
+        <div id="tiempo">00:00</div>
+        <span>PIEZA:</span>
+        <div id="tetromino"></div>
+        <br />
+        <div id="historial">
+          <span>Mejores Puntajes</span>
+          <input type="text" id="nombreJugador" placeholder="Tu nombre" />
+          <div id="mejorPuntaje"><p>😐</p></div>
+        </div>
+        <span>NOTIFICACIONES</span>
+        <div id="mensajes" placeholder="mensaje">😊</div>
+      </aside>
+      <aside id="botonesjuego">
+        <button id="reiniciar">Reiniciar</button>
+        <button id="pausar">Pausar</button>
+        <button id="continuar">Continuar</button>
+        <button id="guardar">Guardar</button>
+        <button id="salir">Salir</button>
+      </aside>
+      <div id="controles">
+        <button id="izquierda">⬅️</button>
+        <button id="abajo">⬇️</button>
+        <button id="derecha">➡️</button>
+        <button id="rotar">🔄</button>
+      </div>
+    </div>
+    <footer>
+      <p>Desarrollado por <a href="">&copy; Yeison PV</a></p>
+    </footer>
+  </body>
+</html>
