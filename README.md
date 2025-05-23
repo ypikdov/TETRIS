@@ -16,13 +16,13 @@ Una implementación moderna del clásico juego Tetris construido con tecnología
 - ⏯ Sistema de **pausa/reinicio** integrado
 
 🕹 Cómo Jugar
-Objetivo: Completa líneas horizontales para ganar puntos
-
-Niveles: Cada 10 líneas completadas aumenta el nivel (y la velocidad)
+Objetivo: 
+Completa líneas horizontales para ganar puntos
+Niveles: 
+Cada 10 líneas completadas aumenta el nivel (y la velocidad)
 
 Puntuación:
 100 puntos × nivel por línea
-Bonus por múltiples líneas simultáneas
 Game Over: Cuando las piezas alcanzan el tope del tablero
 
 ⌨️ Controles
